@@ -1,5 +1,36 @@
 **Mac Laptop Setup**
 
+- [Trackpad Configuration](#trackpad-configuration)
+- [Display Hidden System Files in Finder](#display-hidden-system-files-in-finder)
+- [Terminal Setup](#terminal-setup)
+  * [Install xcode](#install-xcode)
+    + [Accept xcode license on command line](#accept-xcode-license-on-command-line)
+  * [Install iterm2](#install-iterm2)
+  * [Lock iterm2 to &quot;doc bar&quot;](#lock-iterm2-to--quot-doc-bar-quot-)
+  * [Install Oh My Zsh](#install-oh-my-zsh)
+  * [Change the theme used by Oh My Zsh](#change-the-theme-used-by-oh-my-zsh)
+  * [Install the Powerline fonts](#install-the-powerline-fonts)
+  * [Configure iTerm to use the installed fonts](#configure-iterm-to-use-the-installed-fonts)
+- [Creating the working directories](#creating-the-working-directories)
+  * [Setting up your work directory](#setting-up-your-work-directory)
+  * [create a root directory](#create-a-root-directory)
+  * [create several sub-directories.](#create-several-sub-directories)
+- [Configure git and GitHub access](#configure-git-and-github-access)
+  * [Setup global configuration](#setup-global-configuration)
+  * [Enable OSXkeychain as a credential helper](#enable-osxkeychain-as-a-credential-helper)
+  * [Creating a personal access token for github](#creating-a-personal-access-token-for-github)
+  * [Creating a personal access token for gitlab](#creating-a-personal-access-token-for-gitlab)
+- [Install Docker](#install-docker)
+- [Editors](#editors)
+  * [Vim (VI)](#vim--vi-)
+  * [Visual Studio Code](#visual-studio-code)
+    + [Install Visual Studio Code](#install-visual-studio-code)
+- [Install Brew](#install-brew)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+- [10.0. List of addtional tools that I have used:](#100-list-of-addtional-tools-that-i-have-used-)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ---
 # Trackpad Configuration
