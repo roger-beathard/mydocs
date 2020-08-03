@@ -1,6 +1,6 @@
-# Mac Laptop Setup
+**Mac Laptop Setup**
 
-[[TOC]]
+
 
 # Trackpad Configuration
 
@@ -46,19 +46,19 @@ The following is used to setup the base environment used for PHD development tea
 - Additional Oh My Zsh configurations
 - PHD GCP tools.
 
-## **Install xcode**
+## Install xcode
 Make sure you installed xcode from appstore.
-### **Accept xcode license on command line**
+### Accept xcode license on command line
 In order to use xcode from the command line you need to accept the licnese terms.
 - "**sudo xcodebuild -license**"
   
-## **Install iterm2**
+## Install iterm2
 
 Install the stable release of iterm2 from the iterm2 site. ([https://iterm2.com/downloads.html](https://iterm2.com/downloads.html)).
 
 - The installation should ask your permission to copy application to your application folder.
 
-## Lock iterm2 to &quot;doc bar&quot;
+## 4.3. Lock iterm2 to &quot;doc bar&quot;
 
 In order to have quick access to the terminal, configure iTerm to stay in doc bar.
 
@@ -66,7 +66,8 @@ In order to have quick access to the terminal, configure iTerm to stay in doc ba
 - Once iTerm is opened do a right-click on the iTerm icon and click &quot;Options->Keep In Doc&quot;
 
 
-## **Install Oh My Zsh -** [https://ohmyz.sh](https://ohmyz.sh)
+## 4.4. **Install Oh My Zsh 
+[https://ohmyz.sh](https://ohmyz.sh)
 
 &quot;Oh my Zsh&quot; is a package the provides a better experience for zsh &quot;shell&quot;. One of the primary benefits is that it has a set of plugins and themes for presenting context specific information on where you are in the directory and the current state of your terminal session. (ie. are you in a git directory, which Kubernetes cluster configuration is active).
 
@@ -76,7 +77,7 @@ sh -c &quot;$(curl -fsSL [https://raw.githubusercontent.com/robbyrussell/oh-my-z
 
 - Restart iTerm.
 
-## **Change the theme used by Oh My Zsh**
+## 4.5. **Change the theme used by Oh My Zsh**
 
 Although there are many themes that can be used in &quot;OhMyZsh&quot;In  iTerm issue the following command to change from robbyrussell them to &quot;agnoster&quot;
 
@@ -87,40 +88,29 @@ _sed -i.bak 's/ZSH_THEME=robbyrussell;/ZSH_THEME=agnoster;/g' .zshrc_
 At this point you should see a terminal session as shown below with some funky characters in the prompt. The next step will be to install a set of fonts to address.
 
 
-## **Install the Powerline fonts (**[https://github.com/powerline/fonts](https://github.com/powerline/fonts)**)**
+## 4.6. **Install the Powerline fonts 
+
+([https://github.com/powerline/fonts](https://github.com/powerline/fonts))
 
 Run the following to install the fonts:
 
 **Powerline font install script**
 
-# clone
 
-git clone https://github.com/powerline/fonts.git --depth=1
+* git clone https://github.com/powerline/fonts.git --depth=1
+* ./install.sh
+* cd ..
+* rm -rf fonts
 
-# install
+## 4.7. Configure iTerm to use the installed fonts
 
-cd fonts
-
-./install.sh
-
-# clean-up a bit
-
-cd ..
-
-rm -rf fonts
-
-###
-**Now we need to tell iTerm to use the installed font.**
+Now we need to tell iTerm to use the installed font
 
 Open up the Preferences panel in iTerm
-
-
 - Navigate to the &quot;Default&quot; profile in the Profiles tab.
 - Select the Text tab
 - Select the &quot;Change Font&quot; button.
 - Select the &quot;Meslo LG M for Powerline&quot; from the selection as show below:
-
-
 - Navigate to the Color tab and select &quot;Tango Dark&quot; from the &quot;Color Presets&quot; pull down menu.
 
 The gibberish in the iTerm prompt should now be fixed and should look as follows:
@@ -128,75 +118,77 @@ The gibberish in the iTerm prompt should now be fixed and should look as follows
 
 
 
-# Setting up the environment
+# 5. Setting up the environment
 
-## Setting up your work directory
+## 5.1. Setting up your work directory
 
 As George Carlin says everyone needs [a place for their stuff.](https://www.youtube.com/watch?v=JLoge6QzcGY)
 
-# create a root directory
+# 6. create a root directory
 
 mkdir ~/mystuff
 
-# create several sub-directories. 
+# 7. create several sub-directories. 
 This directory is used for managing GitHub repos and golang components Note: the "-p" option tells mkdir to create any intermediary directories.
 
 mkdir -p ~/mystuff/projects
 mkdir -p ~/mystuff/tools
 
 
-## Configure git and GitHub access
+## 7.1. Configure git and GitHub access
 
-### Setup global configuration
+### 7.1.1. Setup global configuration
 
 - git config --global user.name &quot;your user name ie. &quot;John Doe&quot;&quot;
 - git config --global user.email &quot;your email address ie. johndoe@gmail.com&quot;
 
-### Enable OSXkeychain as a credential helper
+### 7.1.2. Enable OSXkeychain as a credential helper
 
 In order to keep git from having to ask you for your username password each time it needs to access GitHub. git will use the osxkeychain to store credential information. git needs to be told to use this mechanism. ([https://help.github.com/articles/caching-your-github-password-in-git/](https://help.github.com/articles/caching-your-github-password-in-git/)). Assuming you have not done these steps before just run the following
 
 - git config --global credential.helper osxkeychain
 
-### Creating a personal access token for the command line
+### 7.1.3. Creating a personal access token for the command line
 
 To access GitHub you do not use your GitHub password but instead use a &quot;personal access token&quot; generated from GitHub. The following provides good information on setting this up. ([https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)).
 
 In the scopes/permissions just select the repo section.
 
 
-# Install Docker
+# 8. Install Docker
 
 The following link can be used to install docker. [https://www.docker.com/get-started](https://www.docker.com/get-started) Just follow the links on the page related to mac desktop installation details.
 
 
-# Editors
+# 9. Editors
 
 You will soon find out that Text Edit **cannot** be used for modifying scripts or any other files as it tend to insert non-ascii characters as formatting directives. There are two editors that are used: vim (VI) ([https://www.vim.org](https://www.vim.org)) and visual studio code ([https://code.visualstudio.com](https://code.visualstudio.com)).
 
-## Vim (VI) ([https://www.vim.org](https://www.vim.org))
+## 9.1. Vim (VI) 
+[https://www.vim.org](https://www.vim.org)
 
 One of vi&#39;s strengths is that it is available on all Macs and all linux distributions including the one we use to build our microservices. It other strengths is that it is light weight and very good for doing quick edits on a single file. The weakness is that there is a learning curb. but once you get a handle on the key sequence the same type of editing patterns is used by other programs.
 
 - [https://www.guru99.com/the-vi-editor.html - explanation and video](https://www.guru99.com/the-vi-editor.html)
 - [https://www.openvim.com - A good tutorial](https://www.openvim.com)
 
-## Visual Studio Code ([https://code.visualstudio.com](https://code.visualstudio.com)).
+## 9.2. Visual Studio Code 
+[https://code.visualstudio.com](https://code.visualstudio.com)
 
 Unlike Vim, Visual Studio Code is a Microsoft developed IDE open-sourced editor. Visual Studio code is very similar to Atom. _Note: The team used Atom at the start of development but there were some performance and stability issues that were well documented by the community that has not plagued visual studio code._
 
-### Install Visual Studio Code
+### 9.2.1. Install Visual Studio Code
 
 Refer to the following to install Visual Studio Code: [VS Code Configuration](./../..//wiki/spaces/DI/pages/234193018/VS+Code+Configuration)
 
 
-# Install Brew
+# 10. Install Brew
 
 Although I tend to find dockertized alternatives for most of my tooling, Homebrew is another mechanisms for loading various tools.
 
 Homebrew (Brew) is a package manager for Mac that simplifies the installation of various tools and command line interface programs. You can read more about brew [here](https://brew.sh/).
 
-### Prerequisites
+### 10.0.2. Prerequisites
 
 Before installation ensure you have installed the &quot;command-line tools for Xcode&quot;. You can check to see if you have them installed by running the following cmd in iTerm
 
@@ -206,7 +198,7 @@ If the tools are already installed you will see a message saying they have alrea
 
 Alternatively you can install Xcode from the app store, but this contains a lot of unnecessary items that aren&#39;t needed at this time.
 
-### Installation
+### 10.0.3. Installation
 
 - To install open up iTerm and paste the following line
 
@@ -217,7 +209,7 @@ Alternatively you can install Xcode from the app store, but this contains a lot 
 
 $ brew doctor
 
-# List of addtional tools that I have used:
+# 11. List of addtional tools that I have used:
 * [helm](./helm.md)
 * [MiniKube](./Minikube.md)
 * [Git Flow Tool](./git-flow.md)
