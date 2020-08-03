@@ -1,5 +1,3 @@
-[[TOC]]
-
 # Install Minikube
 
 Minkube allows you run kubernetes in a single VM on you laptop. Although Minikube can run under different VM technologies (ie Virtualbox, Vmware fusion), the set of instructions will run Minikube using Apple&#39;s core Hyperkit framework. Although most of the hooks for utilizing Hyperkit were installed in the Docker setup there is an additional driver that needs to be installed for Minikube. The instructions for installing minikube and the Hyperkit docker driver are based on the following web pages:
@@ -29,22 +27,22 @@ Do a _&quot;ls -l /usr/local/bin/docker-machine-driver-hyperkit&quot;_ to verify
 
 ## Install the minikube binary.
 
-Minikube is a single binary that will be placed in the ~/mystuff/tools directory after running the following command:
+Minikube is a single binary that will be placed in the ~/myjunk/tools directory after running the following command:
 
-curl -Lo minikube [https://storage.googleapis.com/minikube/releases/v0.32.0/minikube-darwin-amd64](https://storage.googleapis.com/minikube/releases/v0.32.0/minikube-darwin-amd64)&amp;&amp; chmod +x minikube &amp;&amp; mv minikube ~/mystuff/tools
+curl -Lo minikube [https://storage.googleapis.com/minikube/releases/v0.32.0/minikube-darwin-amd64](https://storage.googleapis.com/minikube/releases/v0.32.0/minikube-darwin-amd64)&amp;&amp; chmod +x minikube &amp;&amp; mv minikube ~/myjunk/tools
 
 ### What is the command doing?
 
 - curl -Lo minikube [https://storage.googleapis.com/minikube/releases/v0.32.0/minikube-darwin-amd64](https://storage.googleapis.com/minikube/releases/v0.32.0/minikube-darwin-amd64) - retrieve binary from remote
 - chmod +x minikube - change permission bit to make minikube executable
-- mv minikube ~/mystuff/tools - move minikube to ~/mystuff/tools
+- mv minikube ~/myjunk/tools - move minikube to ~/myjunk/tools
 
 ###
 
 
 ### Post Install
 
-Do a ls ~/mystuff/tools/minikube to verify minikube was moved to that directory.
+Do a ls ~/myjunk/tools/minikube to verify minikube was moved to that directory.
 
 ## Verify Minikube Installation
 
