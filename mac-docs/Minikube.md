@@ -81,4 +81,3 @@ To start up minikube after the initial startup, you just need to run **&#39;mini
 
 [Minikube](./../..//wiki/spaces/DO/pages/803275403/Minikube)
 
-[Multi-Stage Docker builds](./../..//wiki/spaces/DO/pages/803537541/Multi-Stage+Docker+builds) - Not necessary related to minikube but is helpful in creating docker images to run in Minikube
