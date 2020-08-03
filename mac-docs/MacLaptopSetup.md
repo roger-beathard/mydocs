@@ -258,7 +258,7 @@ $ brew doctor
 * [Git Flow Tool](./git-flow.md)
 * [Tool to help assume role in AWS. Forked project.](https://github.com/roger-beathard/assume)
 * [Tool for managing kubernetes namespace and context. kubectx & kubens](https://github.com/ahmetb/kubectx)
-* [Multi-Stage Docker builds](./../..//wiki/spaces/DO/pages/803537541/Multi-Stage+Docker+builds)
+* [Multi-Stage Docker builds](https://medium.com/capital-one-tech/multi-stage-builds-and-dockerfile-b5866d9e2f84)
 
 
 
