@@ -256,8 +256,8 @@ $ brew doctor
 * [helm](./helm.md)
 * [MiniKube](./Minikube.md)
 * [Git Flow Tool](./git-flow.md)
-* [AWS Assumerole]()
-* [kubectx & kubens](https://github.com/ahmetb/kubectx)
+* [Tool to help assume role in AWS] (Forked project: https://github.com/roger-beathard/assume)
+* [Tool for managing kubernetes namespace and context. kubectx & kubens](https://github.com/ahmetb/kubectx)
 * [Multi-Stage Docker builds](./../..//wiki/spaces/DO/pages/803537541/Multi-Stage+Docker+builds)
 
 
