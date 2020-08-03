@@ -126,14 +126,15 @@ As George Carlin says everyone needs [a place for their stuff.](https://www.yout
 
 # 6. create a root directory
 
-mkdir ~/mystuff
+mkdir ~/myjunk
 
 # 7. create several sub-directories. 
 This directory is used for managing GitHub repos and golang components Note: the "-p" option tells mkdir to create any intermediary directories.
 
-mkdir -p ~/mystuff/projects
-mkdir -p ~/mystuff/tools
-
+```
+mkdir -p ~/myjunk/projects
+mkdir -p ~/myjunk/tools
+```
 
 ## 7.1. Configure git and GitHub access
 
@@ -148,12 +149,17 @@ In order to keep git from having to ask you for your username password each time
 
 - git config --global credential.helper osxkeychain
 
-### 7.1.3. Creating a personal access token for the command line
+### 7.1.3. Creating a personal access token for github
 
 To access GitHub you do not use your GitHub password but instead use a &quot;personal access token&quot; generated from GitHub. The following provides good information on setting this up. ([https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)).
 
 In the scopes/permissions just select the repo section.
 
+### 7.1.4. Creating a personal access token for gitlab
+https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html
+
+To use the token:
+https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token#using-a-token-on-the-command-line
 
 # 8. Install Docker
 
