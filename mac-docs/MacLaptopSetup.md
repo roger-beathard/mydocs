@@ -217,7 +217,7 @@ One of vi&#39;s strengths is that it is available on all Macs and all linux dist
 ## Visual Studio Code 
 [https://code.visualstudio.com](https://code.visualstudio.com)
 
-Unlike Vim, Visual Studio Code is a Microsoft developed IDE open-sourced editor. Visual Studio code is very similar to Atom. _Note: The team used Atom at the start of development but there were some performance and stability issues that were well documented by the community that has not plagued visual studio code._
+Unlike Vim, Visual Studio Code is a Microsoft developed IDE open-sourced editor. Visual Studio code is very similar to Atom. _Note: I have used Atom, in the past, but there were some performance and stability issues that were well documented by the community that has not plagued visual studio code._
 
 ### Install Visual Studio Code
 
