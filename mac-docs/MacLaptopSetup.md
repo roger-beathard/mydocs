@@ -1,12 +1,13 @@
 **Mac Laptop Setup**
 
+- [Background](#background)
 - [Trackpad Configuration](#trackpad-configuration)
 - [Display Hidden System Files in Finder](#display-hidden-system-files-in-finder)
 - [Terminal Setup](#terminal-setup)
   * [Install xcode](#install-xcode)
     + [Accept xcode license on command line](#accept-xcode-license-on-command-line)
   * [Install iterm2](#install-iterm2)
-  * [Lock iterm2 to &quot;doc bar&quot;](#lock-iterm2-to--quot-doc-bar-quot-)
+  * [Lock iterm2 to doc bar](#Lock-iterm2-to-doc-bar)
   * [Install Oh My Zsh](#install-oh-my-zsh)
   * [Change the theme used by Oh My Zsh](#change-the-theme-used-by-oh-my-zsh)
   * [Install the Powerline fonts](#install-the-powerline-fonts)
@@ -31,6 +32,10 @@
 - [10.0. List of addtional tools that I have used:](#100-list-of-addtional-tools-that-i-have-used-)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+# Background
+
+The following instructions are a little pendantic. I originally wrote these instructions to help facilitate a common environment for some of the engineers on my team who were coming over from an operations only background. No CLI or little coding experience.
 
 ---
 # Trackpad Configuration
@@ -85,7 +90,9 @@ The following is used to setup the base environment used for PHD development tea
 Make sure you installed xcode from appstore.
 ### Accept xcode license on command line
 In order to use xcode from the command line you need to accept the licnese terms.
-- "**sudo xcodebuild -license**"
+```
+sudo xcodebuild -license
+```
   
 ## Install iterm2
 
@@ -93,7 +100,7 @@ Install the stable release of iterm2 from the iterm2 site. ([https://iterm2.com/
 
 - The installation should ask your permission to copy application to your application folder.
 
-## Lock iterm2 to &quot;doc bar&quot;
+## Lock iterm2 to doc bar
 
 In order to have quick access to the terminal, configure iTerm to stay in doc bar.
 
@@ -107,36 +114,40 @@ In order to have quick access to the terminal, configure iTerm to stay in doc ba
 
 &quot;Oh my Zsh&quot; is a package the provides a better experience for zsh &quot;shell&quot;. One of the primary benefits is that it has a set of plugins and themes for presenting context specific information on where you are in the directory and the current state of your terminal session. (ie. are you in a git directory, which Kubernetes cluster configuration is active).
 
-- Open up item and run the following command:
+Open up item and run the following command:
 
-sh -c &quot;$(curl -fsSL [https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh](https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh))&quot;
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
 
-- Restart iTerm.
+Restart iTerm.
 
 ## Change the theme used by Oh My Zsh
 
 Although there are many themes that can be used in &quot;OhMyZsh&quot;In  iTerm issue the following command to change from robbyrussell them to &quot;agnoster&quot;
 
-_sed -i.bak 's/ZSH_THEME=robbyrussell;/ZSH_THEME=agnoster;/g' .zshrc_
+```
+sed -i.bak 's/ZSH_THEME=robbyrussell;/ZSH_THEME=agnoster;/g' .zshrc
+```
 
-- Restart iTerm
+Restart iTerm
 
 At this point you should see a terminal session as shown below with some funky characters in the prompt. The next step will be to install a set of fonts to address.
 
 
 ## Install the Powerline fonts 
 
-([https://github.com/powerline/fonts](https://github.com/powerline/fonts))
-
 Run the following to install the fonts:
 
 **Powerline font install script**
 
-
-* git clone https://github.com/powerline/fonts.git --depth=1
-* ./install.sh
-* cd ..
-* rm -rf fonts
+```
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+```
 
 ## Configure iTerm to use the installed fonts
 
@@ -178,8 +189,10 @@ mkdir -p ~/myjunk/tools
 
 ## Setup global configuration
 
-- git config --global user.name &quot;your user name ie. &quot;John Doe&quot;&quot;
-- git config --global user.email &quot;your email address ie. johndoe@gmail.com&quot;
+```
+git config --global user.name "your user name"
+git config --global user.email "your email address"
+```
 
 ## Enable OSXkeychain as a credential helper
 
@@ -202,7 +215,7 @@ https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-a
 ---
 # Install Docker
 
-The following link can be used to install docker. [https://www.docker.com/get-started](https://www.docker.com/get-started) Just follow the links on the page related to mac desktop installation details.
+The following link can be used to install Docker Desktop. [https://www.docker.com/get-started](https://www.docker.com/get-started) Just follow the links on the page related to Mac Docker Desktop installation details.
 
 ---
 # Editors
