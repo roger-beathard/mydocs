@@ -61,8 +61,11 @@ I tend to find the default trackpad behavior to be a pain due to the force neede
 
 Run the following commands in Terminal to allow Finder to display system files.  This can help with modifying the .zsh\_myenv file once it has been installed (later in these instructions)
 
-- "**defaults write com.apple.finder AppleShowAllFiles YES**";
-- Press return. Hold the &#39;Option/alt&#39; key, then right click on the Finder icon in the dock and click Relaunch.
+```
+defaults write com.apple.finder AppleShowAllFiles YES**
+```
+
+Hold the &#39;Option/alt&#39; key, then right click on the Finder icon in the dock and click Relaunch.
 
 System files will display in your Finder.
 
