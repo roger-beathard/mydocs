@@ -35,7 +35,7 @@
 
 # Background
 
-The following instructions are a little pendantic. I originally wrote these instructions to help facilitate a common environment for some of the engineers on my team who were coming over from an operations only background. No CLI or little coding experience.
+The following instructions are a little pedantic. I originally wrote these instructions to help facilitate a common environment for some of the engineers on my team who were coming over from an operations only background. No CLI or little coding experience.
 
 ---
 # Trackpad Configuration
