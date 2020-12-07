@@ -77,7 +77,7 @@ System files will display in your Finder.
 ---
 # Terminal Setup
 
-The following is used to setup the base environment used for PHD development teams. It is based on the following:
+The following is used to setup the base environment:
 
 - iterm2 ([https://iterm2.com](https://iterm2.com)) - An enhanced terminal.
 - zsh ([http://zsh.sourceforge.net](http://zsh.sourceforge.net)) - The base shell.
