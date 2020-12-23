@@ -1,6 +1,7 @@
 **Mac Laptop Setup**
 
 - [Background](#background)
+- [Soft Link Icloud Folder](#soft-link-icloud-folder)
 - [Trackpad Configuration](#trackpad-configuration)
 - [Display Hidden System Files in Finder](#display-hidden-system-files-in-finder)
 - [Terminal Setup](#terminal-setup)
@@ -36,6 +37,13 @@
 # Background
 
 The following instructions are a little pedantic. I originally wrote these instructions to help facilitate a common environment for some of the engineers on my team who were coming over from an operations only background. No CLI or little coding experience.
+
+---
+# Soft link icloud folder
+
+The icloud folder is buried and is not easy to get at from the command line. The following softlink will make it readily accessible.
+
+```ln -s  ~/Library/Mobile\ Documents/com\~apple\~CloudDocs icloud```
 
 ---
 # Trackpad Configuration
