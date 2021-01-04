@@ -43,7 +43,7 @@ The following instructions are a little pedantic. I originally wrote these instr
 
 The icloud folder is buried and is not easy to get at from the command line. The following softlink will make it readily accessible.
 
-```ln -s  ~/Library/Mobile\ Documents/com\~apple\~CloudDocs icloud```
+```ln -s  ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/icloud```
 
 ---
 # Trackpad Configuration
