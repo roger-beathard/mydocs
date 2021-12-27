@@ -204,7 +204,7 @@ git config --global user.email "your email address"
 
 ## Use ssh tokens for github access
 
-In Github setting: create and add your ssh token in the "SSH & GPG" section.
+In Github web account settings: create and add your ssh token in the "SSH & GPG" section.
 
 ---
 # Install Docker
