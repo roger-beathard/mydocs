@@ -54,13 +54,13 @@ I tend to find the default trackpad behavior to be a pain due to the force neede
 
             Open up System Preferences->Trackpad
 
-            In the Point&amp;Click section, enable &quot;Tap to click&quot;
+            In the Point selection, Click enable "Tap to click";
 
 2. Enabling 3 finger dragging or selection option. This option allows you to drag windows, text select or square selection with three finger touch.
 
             Open up System Preference->Accessibility
 
-            Select the &quot;Mouse &amp; Trackpad&quot; option
+            Select the "Mouse"; Trackpad; option
 
             Select the "Trackpad Options".
 
@@ -202,23 +202,9 @@ git config --global user.name "your user name"
 git config --global user.email "your email address"
 ```
 
-## Enable OSXkeychain as a credential helper
+## Use ssh tokens for github access
 
-In order to keep git from having to ask you for your username password each time it needs to access GitHub. git will use the osxkeychain to store credential information. git needs to be told to use this mechanism. ([https://help.github.com/articles/caching-your-github-password-in-git/](https://help.github.com/articles/caching-your-github-password-in-git/)). Assuming you have not done these steps before just run the following
-
-- git config --global credential.helper osxkeychain
-
-## Creating a personal access token for github
-
-To access GitHub you do not use your GitHub password but instead use a &quot;personal access token&quot; generated from GitHub. The following provides good information on setting this up. ([https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)).
-
-In the scopes/permissions just select the repo section.
-
-## Creating a personal access token for gitlab
-https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html
-
-To use the token:
-https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token#using-a-token-on-the-command-line
+In Github setting: create and add your ssh token in the "SSH & GPG" section.
 
 ---
 # Install Docker
