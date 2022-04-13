@@ -135,7 +135,7 @@ Restart iTerm.
 Although there are many themes that can be used in &quot;OhMyZsh&quot;In  iTerm issue the following command to change from robbyrussell them to &quot;agnoster&quot;
 
 ```
-sed -i.bak 's/ZSH_THEME=robbyrussell;/ZSH_THEME=agnoster;/g' .zshrc
+sed -i.bak 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' .zshrc
 ```
 
 Restart iTerm
