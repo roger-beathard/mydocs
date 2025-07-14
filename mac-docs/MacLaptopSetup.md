@@ -24,8 +24,6 @@
 - [10.0. List of addtional tools that I have used:](#100-list-of-addtional-tools-that-i-have-used-)
 - [Soft link icloud folder](#soft-link-icloud-folder)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 # Background
 
@@ -109,7 +107,7 @@ ln -s ~/.zsh/.zshrc ~/.zshrc # Link .zshrc file in user home to .zshrc in .zsh d
 ```
 Restart your terminal
 
-##  3. <a name='Whatfilesaredelivered'></a>What files are delivered?
+##  <a name='Whatfilesaredelivered'></a>What files are delivered?
 There are thre main types of files that are used:
 * .zshrc - is the main configuration file for zsh
 * .zshrc-history - contains the shell history. Currently it is configured to 10k lines.  This can be configured in .zshrc
