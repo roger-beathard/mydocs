@@ -1,38 +1,31 @@
-**Mac Laptop Setup**
-
 - [Background](#background)
-- [Soft Link Icloud Folder](#soft-link-icloud-folder)
 - [Trackpad Configuration](#trackpad-configuration)
 - [Display Hidden System Files in Finder](#display-hidden-system-files-in-finder)
 - [Terminal Setup](#terminal-setup)
-  * [Install xcode](#install-xcode)
-    + [Accept xcode license on command line](#accept-xcode-license-on-command-line)
-  * [Install iterm2](#install-iterm2)
-  * [Lock iterm2 to doc bar](#Lock-iterm2-to-doc-bar)
-  * [Install Oh My Zsh](#install-oh-my-zsh)
-  * [Change the theme used by Oh My Zsh](#change-the-theme-used-by-oh-my-zsh)
-  * [Install the Powerline fonts](#install-the-powerline-fonts)
-  * [Configure iTerm to use the installed fonts](#configure-iterm-to-use-the-installed-fonts)
+  * [1. <a name='Installxcode'></a>Install xcode](#1--a-name--installxcode----a-install-xcode)
+    + [1.1. <a name='Acceptxcodelicenseoncommandline'></a>Accept xcode license on command line](#11--a-name--acceptxcodelicenseoncommandline----a-accept-xcode-license-on-command-line)
+  * [2. <a name='LockMacTerminaltodockbar'></a>Lock Mac Terminal to dock bar](#2--a-name--lockmacterminaltodockbar----a-lock-mac-terminal-to-dock-bar)
+- [Zsh setup](#zsh-setup)
+  * [3. <a name='Whatfilesaredelivered'></a>What files are delivered?](#3--a-name--whatfilesaredelivered----a-what-files-are-delivered-)
 - [Creating the working directories](#creating-the-working-directories)
-  * [Setting up your work directory](#setting-up-your-work-directory)
-  * [create a root directory](#create-a-root-directory)
-  * [create several sub-directories.](#create-several-sub-directories)
+  * [4. <a name='Settingupyourworkdirectory'></a>Setting up your work directory](#4--a-name--settingupyourworkdirectory----a-setting-up-your-work-directory)
+  * [5. <a name='createarootdirectory'></a>create a root directory](#5--a-name--createarootdirectory----a-create-a-root-directory)
+  * [6. <a name='createseveralsub-directories.'></a>create several sub-directories.](#6--a-name--createseveralsub-directories----a-create-several-sub-directories)
 - [Configure git and GitHub access](#configure-git-and-github-access)
-  * [Setup global configuration](#setup-global-configuration)
-  * [Enable OSXkeychain as a credential helper](#enable-osxkeychain-as-a-credential-helper)
-  * [Creating a personal access token for github](#creating-a-personal-access-token-for-github)
-  * [Creating a personal access token for gitlab](#creating-a-personal-access-token-for-gitlab)
-- [Install Docker](#install-docker)
+  * [7. <a name='Setupglobalconfiguration'></a>Setup global configuration](#7--a-name--setupglobalconfiguration----a-setup-global-configuration)
+  * [8. <a name='Usesshtokensforgithubaccess'></a>Use ssh tokens for github access](#8--a-name--usesshtokensforgithubaccess----a-use-ssh-tokens-for-github-access)
 - [Editors](#editors)
-  * [Vim (VI)](#vim--vi-)
-  * [Visual Studio Code](#visual-studio-code)
-    + [Install Visual Studio Code](#install-visual-studio-code)
+  * [9. <a name='VimVI'></a>Vim (VI)](#9--a-name--vimvi----a-vim--vi-)
+  * [10. <a name='VisualStudioCode'></a>Visual Studio Code](#10--a-name--visualstudiocode----a-visual-studio-code)
+    + [10.1. <a name='InstallVisualStudioCode'></a>Install Visual Studio Code](#101--a-name--installvisualstudiocode----a-install-visual-studio-code)
 - [Install Brew](#install-brew)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
+  * [11. <a name='Prerequisites'></a>Prerequisites](#11--a-name--prerequisites----a-prerequisites)
+  * [12. <a name='Installation'></a>Installation](#12--a-name--installation----a-installation)
 - [10.0. List of addtional tools that I have used:](#100-list-of-addtional-tools-that-i-have-used-)
+- [Soft link icloud folder](#soft-link-icloud-folder)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 # Background
 
@@ -82,15 +75,15 @@ System files will display in your Finder.
 
 I used to install oh-my-zsh and some other additionall tooling. I have replaced this with the mac default terminal and zsh configurations.
 
-## Install xcode
+##  1. <a name='Installxcode'></a>Install xcode
 Make sure you installed xcode from appstore or from your company approved resources.
-### Accept xcode license on command line
+###  1.1. <a name='Acceptxcodelicenseoncommandline'></a>Accept xcode license on command line
 In order to use xcode from the command line you need to accept the licnese terms.
 ```
 sudo xcodebuild -license
 ```
   
-## Lock Mac Terminal to dock bar
+##  2. <a name='LockMacTerminaltodockbar'></a>Lock Mac Terminal to dock bar
 
 In order to have quick access to the terminal, configure Mac Terminal to stay in doc bar.
 
@@ -116,7 +109,7 @@ ln -s ~/.zsh/.zshrc ~/.zshrc # Link .zshrc file in user home to .zshrc in .zsh d
 ```
 Restart your terminal
 
-## What files are delivered?
+##  3. <a name='Whatfilesaredelivered'></a>What files are delivered?
 There are thre main types of files that are used:
 * .zshrc - is the main configuration file for zsh
 * .zshrc-history - contains the shell history. Currently it is configured to 10k lines.  This can be configured in .zshrc
@@ -125,20 +118,20 @@ There are thre main types of files that are used:
 
 # Creating the working directories
 
-## Setting up your work directory
+##  4. <a name='Settingupyourworkdirectory'></a>Setting up your work directory
 
 As George Carlin says everyone needs [a place for their stuff.](https://www.youtube.com/watch?v=JLoge6QzcGY). 
 
 [!NOTE]
 The main point of this section is that it is typically best to have a single directory in your home account for your main stuff.
 
-## create a root directory
+##  5. <a name='createarootdirectory'></a>create a root directory
 
 ```
 mkdir ~/myjunk
 ```
 
-## create several sub-directories. 
+##  6. <a name='createseveralsub-directories.'></a>create several sub-directories. 
 This directory is used for managing GitHub repos and golang components Note: the "-p" option tells mkdir to create any intermediary directories.
 
 ```
@@ -150,14 +143,14 @@ mkdir -p ~/myjunk/tools
 [!NOTE]
 The following may be neccessary or not for github access.
 
-## Setup global configuration
+##  7. <a name='Setupglobalconfiguration'></a>Setup global configuration
 
 ```
 git config --global user.name "your user name"
 git config --global user.email "your email address"
 ```
 
-## Use ssh tokens for github access
+##  8. <a name='Usesshtokensforgithubaccess'></a>Use ssh tokens for github access
 
 In Github web account settings: create and add your ssh token in the "SSH & GPG" section. May be neccessary or not.
 
@@ -167,7 +160,7 @@ In Github web account settings: create and add your ssh token in the "SSH & GPG"
 
 You will soon find out that Text Edit **cannot** be used for modifying scripts or any other files as it tend to insert non-ascii characters as formatting directives. There are two editors that are used: vim (VI) ([https://www.vim.org](https://www.vim.org)) and visual studio code ([https://code.visualstudio.com](https://code.visualstudio.com)).
 
-## Vim (VI) 
+##  9. <a name='VimVI'></a>Vim (VI) 
 [https://www.vim.org](https://www.vim.org)
 
 One of vi&#39;s strengths is that it is available on all Macs and all linux distributions including the one we use to build our microservices. It other strengths is that it is light weight and very good for doing quick edits on a single file. The weakness is that there is a learning curb. but once you get a handle on the key sequence the same type of editing patterns is used by other programs.
@@ -175,12 +168,12 @@ One of vi&#39;s strengths is that it is available on all Macs and all linux dist
 - [https://www.guru99.com/the-vi-editor.html - explanation and video](https://www.guru99.com/the-vi-editor.html)
 - [https://www.openvim.com - A good tutorial](https://www.openvim.com)
 
-## Visual Studio Code 
+##  10. <a name='VisualStudioCode'></a>Visual Studio Code 
 [https://code.visualstudio.com](https://code.visualstudio.com)
 
 Unlike Vim, Visual Studio Code is a Microsoft developed IDE open-sourced editor. Visual Studio code is very similar to Atom. _Note: I have used Atom, in the past, but there were some performance and stability issues that were well documented by the community that has not plagued visual studio code._
 
-### Install Visual Studio Code
+###  10.1. <a name='InstallVisualStudioCode'></a>Install Visual Studio Code
 
 [!NOTE]
 Follow corporate guidelines on how to install.
@@ -196,7 +189,7 @@ Although I tend to find dockertized alternatives for most of my tooling, Homebre
 
 Homebrew (Brew) is a package manager for Mac that simplifies the installation of various tools and command line interface programs. You can read more about brew [here](https://brew.sh/).
 
-## Prerequisites
+##  11. <a name='Prerequisites'></a>Prerequisites
 
 Before installation ensure you have installed the &quot;command-line tools for Xcode&quot;. You can check to see if you have them installed by running the following cmd in iTerm
 
@@ -206,7 +199,7 @@ If the tools are already installed you will see a message saying they have alrea
 
 Alternatively you can install Xcode from the app store, but this contains a lot of unnecessary items that aren&#39;t needed at this time.
 
-## Installation
+##  12. <a name='Installation'></a>Installation
 
 - To install open up iTerm and paste the following line
 
