@@ -38,12 +38,7 @@
 
 The following instructions are a little pedantic. I originally wrote these instructions to help facilitate a common environment for some of the engineers on my team who were coming over from an operations only background. No CLI or little coding experience.
 
----
-# Soft link icloud folder
 
-The icloud folder is buried and is not easy to get at from the command line. The following softlink will make it readily accessible.
-
-```ln -s  ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/icloud```
 
 ---
 # Trackpad Configuration
@@ -52,19 +47,19 @@ I tend to find the default trackpad behavior to be a pain due to the force neede
 
 1. One finger touch select instead of the default 1-finger click.
 
-            Open up System Preferences->Trackpad
+            Open up System Settings->Trackpad
 
-            In the Point selection, Click enable "Tap to click";
+            Click enable "Tap to click";
 
 2. Enabling 3 finger dragging or selection option. This option allows you to drag windows, text select or square selection with three finger touch.
 
-            Open up System Preference->Accessibility
+            Open up System Settings->Accessibility
 
-            Select the "Mouse"; Trackpad; option
+            Select the "Pointer Control".
 
             Select the "Trackpad Options".
 
-            Enable draging option with "three finger drag"
+            Enable "Draging style" with "three finger drag"
 
  
 
@@ -72,7 +67,7 @@ I tend to find the default trackpad behavior to be a pain due to the force neede
 ---
 # Display Hidden System Files in Finder
 
-Run the following commands in Terminal to allow Finder to display system files.  This can help with modifying the .zsh\_myenv file once it has been installed (later in these instructions)
+Run the following commands in Terminal to allow Finder to display system files.  This can help with modifying hidden file such as .zshrc.
 
 ```
 defaults write com.apple.finder AppleShowAllFiles YES
@@ -85,99 +80,57 @@ System files will display in your Finder.
 ---
 # Terminal Setup
 
-The following is used to setup the base environment:
-
-- iterm2 ([https://iterm2.com](https://iterm2.com)) - An enhanced terminal.
-- zsh ([http://zsh.sourceforge.net](http://zsh.sourceforge.net)) - The base shell.
-- Oh My zsh ([https://ohmyz.sh](https://ohmyz.sh)) - Framework for managing zsh configurations such as prompt enhancements
-- Powerline fonts - Provide special fonts used in the command prompt
-- Additional Oh My Zsh configurations
-- PHD GCP tools.
+I used to install oh-my-zsh and some other additionall tooling. I have replaced this with the mac default terminal and zsh configurations.
 
 ## Install xcode
-Make sure you installed xcode from appstore.
+Make sure you installed xcode from appstore or from your company approved resources.
 ### Accept xcode license on command line
 In order to use xcode from the command line you need to accept the licnese terms.
 ```
 sudo xcodebuild -license
 ```
   
-## Install iterm2
+## Lock Mac Terminal to dock bar
 
-Install the stable release of iterm2 from the iterm2 site. ([https://iterm2.com/downloads.html](https://iterm2.com/downloads.html)).
+In order to have quick access to the terminal, configure Mac Terminal to stay in doc bar.
 
-- The installation should ask your permission to copy application to your application folder.
-
-## Lock iterm2 to doc bar
-
-In order to have quick access to the terminal, configure iTerm to stay in doc bar.
-
-- Start iterm2 from the Application menu.
-- Once iTerm is opened do a right-click on the iTerm icon and click &quot;Options->Keep In Doc&quot;
-
-
-## Install Oh My Zsh 
-
-[https://ohmyz.sh](https://ohmyz.sh)
-
-&quot;Oh my Zsh&quot; is a package the provides a better experience for zsh &quot;shell&quot;. One of the primary benefits is that it has a set of plugins and themes for presenting context specific information on where you are in the directory and the current state of your terminal session. (ie. are you in a git directory, which Kubernetes cluster configuration is active).
-
-Open up item and run the following command:
-
-```
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Restart iTerm.
-
-## Change the theme used by Oh My Zsh
-
-Although there are many themes that can be used in &quot;OhMyZsh&quot;In  iTerm issue the following command to change from robbyrussell them to &quot;agnoster&quot;
-
-```
-sed -i.bak 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' .zshrc
-```
-
-Restart iTerm
-
-At this point you should see a terminal session as shown below with some funky characters in the prompt. The next step will be to install a set of fonts to address.
-
-
-## Install the Powerline fonts 
-
-Run the following to install the fonts:
-
-**Powerline font install script**
-
-```
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
-cd ..
-rm -rf fonts
-```
-
-## Configure iTerm to use the installed fonts
-
-Now we need to tell iTerm to use the installed font
-
-Open up the Preferences panel in iTerm
-- Navigate to the &quot;Default&quot; profile in the Profiles tab.
-- Select the Text tab
-- Select the &quot;Change Font&quot; button.
-- Select the &quot;Meslo LG M for Powerline&quot; from the selection as show below:
-- Navigate to the Color tab and select &quot;Tango Dark&quot; from the &quot;Color Presets&quot; pull down menu.
-
-The gibberish in the iTerm prompt should now be fixed and should look as follows:
-
+- Start Mac Terminal from the Application menu.
+> Applications->Utilities->Terminal
+- Once Mac Terminal is opened do a right-click on the Terminal icon and click &quot;Options->Keep In Doc&quot;
 
 ---
+# Zsh setup
+
+[!NOTE] 
+As earlier stated I have moved away from oh-my-zsh due to bloat and security concerns. When you download oh-my-zsh it has every possible configurations. Although they are "turned off", there is still a great deal that happens behind the scene. The following configuration is straight forward and follows a more traditional zsh paradigm in my opinion.
+
+[!IMPORTANT]
+The following assumes that you have Google gcloud SDK installed in the normal $HOME/gcloud-cloud-sdk path.
+
+``` 
+mkdir ~/.zsh # make zsh home
+cp -r zsh/* ~/.zsh # .zshrc and plugin directory to the newly created .zsh directory. 
+mv ~/.zsh_history to ~/.zsh # move the history to the new home directory.
+mv ~/.zshrc ~/.zshrc.backup # mv/backup current .zshrc file
+ln -s ~/.zsh/.zshrc ~/.zshrc # Link .zshrc file in user home to .zshrc in .zsh directory. 
+```
+Restart your terminal
+
+## What files are delivered?
+There are thre main types of files that are used:
+* .zshrc - is the main configuration file for zsh
+* .zshrc-history - contains the shell history. Currently it is configured to 10k lines.  This can be configured in .zshrc
+* plugin directory - This contains the plugins. They are also enabled via the .zshrc file. See the following for the [list of plugins](zsh/plugins/README.md)
+
 
 # Creating the working directories
 
 ## Setting up your work directory
 
-As George Carlin says everyone needs [a place for their stuff.](https://www.youtube.com/watch?v=JLoge6QzcGY)
+As George Carlin says everyone needs [a place for their stuff.](https://www.youtube.com/watch?v=JLoge6QzcGY). 
+
+[!NOTE]
+The main point of this section is that it is typically best to have a single directory in your home account for your main stuff.
 
 ## create a root directory
 
@@ -194,6 +147,8 @@ mkdir -p ~/myjunk/tools
 ```
 ---
 # Configure git and GitHub access
+[!NOTE]
+The following may be neccessary or not for github access.
 
 ## Setup global configuration
 
@@ -204,12 +159,8 @@ git config --global user.email "your email address"
 
 ## Use ssh tokens for github access
 
-In Github web account settings: create and add your ssh token in the "SSH & GPG" section.
+In Github web account settings: create and add your ssh token in the "SSH & GPG" section. May be neccessary or not.
 
----
-# Install Docker
-
-The following link can be used to install Docker Desktop. [https://www.docker.com/get-started](https://www.docker.com/get-started) Just follow the links on the page related to Mac Docker Desktop installation details.
 
 ---
 # Editors
@@ -231,10 +182,15 @@ Unlike Vim, Visual Studio Code is a Microsoft developed IDE open-sourced editor.
 
 ### Install Visual Studio Code
 
+[!NOTE]
+Follow corporate guidelines on how to install.
+
 Refer to the following to install Visual Studio Code: [VS Code Configuration](./../..//wiki/spaces/DI/pages/234193018/VS+Code+Configuration)
 
 ---
 # Install Brew
+[!NOTE]
+Follow corporate guidelines for use of brew.
 
 Although I tend to find dockertized alternatives for most of my tooling, Homebrew is another mechanisms for loading various tools.
 
@@ -272,5 +228,10 @@ $ brew doctor
 
 
 
+---
+# Soft link icloud folder
 
+The icloud folder is buried and is not easy to get at from the command line. The following softlink will make it readily accessible.
+
+```ln -s  ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/icloud```
 
